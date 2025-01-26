@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalkulator BMI</title>
 
-    <!-- Menghubungkan CSS -->
+    <!-- CSS Link-->
     <link rel="stylesheet" href="css\style.css" />
+
+    <!--Google Fonts CDN link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -18,6 +25,9 @@
     <main>
         <!-- Left Content -->
         <section>
+            <!-- <header>
+                <h1 class="main-header">Kalkulator BMI</h1>
+            </header> -->
             <!-- Introduction -->
 
             <article>
@@ -30,38 +40,43 @@
 
             <!-- Form -->
             <form action="">
-                <div class="form-input">
+                <div class="form-input-gender">
                     <input type="radio" id="jenis-kelamin-pria" name="jenis-kelamin" value="pria">
                     <label for="jenis-kelamin-pria">Pria</label>
                     <input type="radio" id="jenis-kelamin-wanita" name="jenis-kelamin" value="wanita">
                     <label for="jenis-kelamin-wanita">Wanita</label>
                 </div>
+                
                 <div class="form-input">
                     <label for="input-berat-badan">Berat Badan (kg)</label>
                     <input type="number" id="input-berat-badan">
                 </div>
+                
                 <div class="form-input">
                     <label for="input-usia">Usia (tahun)</label>
                     <input type="number" id="input-usia">
                 </div>
+                
                 <div class="form-input">
                     <label for="input-tinggi-badan">Tinggi badan (cm)</label>
                     <input type="number" id="input-tinggi-badan">
                 </div>
+                
                 <div class="btn">
-                    <button id="hitung">Hitung BMI</button>
-                    <button id="clear">Reset</button>
+                    <button type="button" id="hitung">Hitung BMI</button>
+                    <button type="button" id="clear">Reset</button>
                 </div>
             </form>
+            
 
             <!-- Feature Information -->
             <article>
                 <header>
-                    <h2>Keunggulan fitur</h2>
+                    <h4 id="heading-fitur">Keunggulan fitur</h4>
                 </header>
 
-                <div class="fitur-list">
-                    <ol>
+                <div class="fitur-group">
+                    <ol class="fitur-list">
                         <li>Menghitung berat badan</li>
                         <li>Menentukan kategori berat badan ideal atau tidak</li>
                         <li>Mempersiapkan program penurunan berat badan</li>
@@ -79,20 +94,121 @@
                         Kalkulator akan memberi anda gambaran tentang perbandingan berat badan Anda dengan nilai umum.
                         Indeks Massa Tubuh (atau BMI) dihitung
                         sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter)
-                        atau BMI = Kg/M<span>2</span>.
+                        atau BMI = Kg/M<sup>2</sup>.
                     </p>
                 </article>
             </article>
 
         </section>
 
+        <!-- Right Content -->
+        <section>
+            <section class="result">
+                <header>
+                    <h2>Hasil</h2>
+                </header>
+
+                <div class="result-form">
+                    <div id="result-weight"></div>
+                    <div id="result-bmi">0</div>
+                    <div id="result-weight-desc"></div>
+                    <div class="result-btn">
+                        <button id="download-btn">
+                            Download Hasil BMI
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <article>
+                <p id="desc-result-1">Anda berada dalam kategori kekurangan berat badan.
+                    Hal ini mungkin disebabkan oleh kurangnya asupan kalori atau kondisi kesehatan tertentu.
+                    Untuk meningkatkan berat badan ke batas normal, cobalah mengonsumsi makanan bergizi tinggi kalori, 
+                    seperti protein, lemak sehat, dan karbohidrat kompleks, serta periksa kondisi kesehatan Anda ke tenaga medis jika diperlukan.
+                </p>
+                <p id="desc-result-2">Anda berada dalam kategori berat badan normal atau ideal.
+                    Ini merupakan indikasi bahwa tubuh Anda berada pada keseimbangan yang baik.
+                    Pertahankan pola hidup sehat dengan makan makanan bergizi seimbang, olahraga secara rutin, 
+                    dan tidur yang cukup untuk menjaga berat badan ideal ini.
+                </p>
+                <p id="desc-result-3">Anda berada dalam kategori overweight atau berat badan berlebih.
+                    Cara terbaik untuk menurunkan berat badan adalah dengan mengatur asupan kalori makanan yang dikonsumsi, mengurangi makanan berlemak, 
+                    memperbanyak sayur dan buah, serta rutin berolahraga.Jika BMI Anda berada dalam kategori ini, 
+                    maka Anda dianjurkan untuk menurunkan berat badan hingga batas normal.
+                </p>
+                <p id="desc-result-4">Anda berada dalam kategori obesitas atau kegemukan.
+                    Obesitas dapat meningkatkan risiko berbagai masalah kesehatan seperti diabetes, tekanan darah tinggi, dan penyakit jantung.
+                    Dianjurkan untuk berkonsultasi dengan dokter atau ahli gizi untuk mendapatkan rencana diet yang sesuai 
+                    dan program olahraga yang aman.Menurunkan berat badan secara bertahap dengan pola hidup sehat sangat 
+                    penting untuk mengurangi risiko komplikasi kesehatan.
+                </p>
+            </article>
+
+            <div class="btn-group-1">
+                <button id="btn-konsultasi">Konsultasi Ahli Gizi Via Aplikasi</button>
+                <button id="btn-registrasi">Registrasi Online Ahli Gizi</button>
+            </div>
+
+            <article>
+                <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang.
+                    Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran anda terkait dengan berat badan Anda.
+
+                </p>
+            </article>
+
+            <div class="disease-form">
+                <div id="disease-list">
+                    <h4>Beberapa penyakit yang berasal dari kegemukan</h4>
+                    <ul>
+                        <li>Hipertensi</li>
+                        <li>Sakit Jantung</li>
+                        <li>Diabetes</li>
+                        <li>Osteoarthritis</li>
+                    </ul>
+                </div>
+                <div class="btn-group-2">
+                    <button id="btn-konsultasi-disease">Konsultasi Dokter Via Aplikasi</button>
+                    <button id="btn-registrasi-disease">Registrasi Online Sekarang</button>
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
 
     <footer>
+        <div class="footer-container">
+            <!-- Informasi BMI Indonesia -->
+            <div id="footer-info">
+                <h4>Tentang Kami</h4>
+                <p>BMI Indonesia menyediakan solusi untuk memantau kesehatan Anda dengan mudah dan cepat. Dengan kalkulator BMI, kami membantu Anda memahami kondisi tubuh secara lebih baik.</p>
+            </div>
 
+            <!-- Kontak -->
+            <div id="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p>Email: support@bmiindonesia.com</p>
+                <p>Telepon: +62 899-0421-0099</p>
+                <p>Alamat: Jl. Sehat No. 123, Jakarta, Indonesia</p>
+            </div>
+    
+            <!-- Media Sosial -->
+            <div id="footer-social">
+                <h4>Ikuti Kami</h4>
+                <a href="https://facebook.com" target="_blank">Facebook</a> |
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>Copyright © 2018-2025 BMI Indonesia. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Menghubungkan Script JS -->
+    <script src="javascript\script.js"></script>
 </body>
 
 </html>
